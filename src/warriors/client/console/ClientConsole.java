@@ -30,7 +30,7 @@ public class ClientConsole {
 			}			
 		}while(!menuChoice.equals(MENU_QUITTER));
 		sc.close();
-		System.out.println("? bient?t");
+		System.out.println("A bientot");
 	}
 
 	private static void startGame(WarriorsAPI warriors, Scanner sc) {
@@ -38,7 +38,7 @@ public class ClientConsole {
 		System.out.println("Entrez votre nom:");
 		String playerName = sc.nextLine();
 		
-		System.out.println("Choisissez votre h?ro:");
+		System.out.println("Choisissez votre hero:");
 		for(int i = 0; i < warriors.getHeroes().size(); i++) {
 			Hero heroe = warriors.getHeroes().get(i);
 			System.out.println(i+1 + " - " + heroe.getName());

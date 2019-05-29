@@ -5,23 +5,4 @@ public class Swordman extends AbstractHero {
         super(name, img, life, attack);
     }
 
-    @Override
-    public String getName() {
-        return null;
-    }
-
-    @Override
-    public String getImage() {
-        return null;
-    }
-
-    @Override
-    public int getLife() {
-        return 0;
-    }
-
-    @Override
-    public int getAttackLevel() {
-        return 0;
-    }
 }

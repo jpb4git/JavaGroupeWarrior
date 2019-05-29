@@ -4,16 +4,16 @@ import warriors.contracts.Hero;
 
 public abstract class AbstractHero implements Hero {
     private String name;
-    private String img;
+    private String image;
     private int life;
-    private int attack;
+    private int attackLevel;
 
 
-    public AbstractHero(String name, String img, int life, int attack) {
+    public AbstractHero(String name, String image, int life, int attackLevel) {
         this.name = name;
-        this.img = img;
+        this.image = image;
         this.life = life;
-        this.attack = attack;
+        this.attackLevel = attackLevel;
     }
 
     @Override
@@ -25,12 +25,12 @@ public abstract class AbstractHero implements Hero {
         this.name = name;
     }
 
-    public String getImg() {
-        return img;
+    public String getImage() {
+        return image;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     @Override
@@ -42,12 +42,12 @@ public abstract class AbstractHero implements Hero {
         this.life = life;
     }
 
-    public int getAttack() {
-        return attack;
+    public int getAttackLevel() {
+        return attackLevel;
     }
 
-    public void setAttack(int attack) {
-        this.attack = attack;
+    public void setAttackLevel(int attackLevel) {
+        this.attackLevel = attackLevel;
     }
 
 }
