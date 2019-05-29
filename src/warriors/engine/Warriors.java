@@ -1,5 +1,6 @@
 package warriors.engine;
 
+import warriors.game.states.State;
 import warriors.heroes.Swordman;
 import warriors.heroes.Wizard;
 import warriors.contracts.GameState;
@@ -14,12 +15,15 @@ import java.util.List;
 public class Warriors implements WarriorsAPI {
     private ArrayList<Hero> heroes = new ArrayList<>();
     private ArrayList<Map> maps = new ArrayList<>();
+    private GameState state;
+
 
     public Warriors() {
         this.heroes.add(new Wizard("Wizard1", "url",3, 8));
         this.heroes.add(new Swordman("Swordman1", "url",5, 10));
 
         this.maps.add(new RootMap("Map1", 64));
+
     }
 
     @Override
@@ -34,7 +38,7 @@ public class Warriors implements WarriorsAPI {
 
     @Override
     public GameState createGame(String playerName, Hero hero, Map map) {
-        return null;
+        return new State(playerName, hero, map);
     }
 
     @Override

@@ -58,7 +58,7 @@ public class ClientConsole {
 		String gameId = gameState.getGameId();
 		while (gameState.getGameStatus() == GameStatus.IN_PROGRESS) {
 			System.out.println(gameState.getLastLog());
-			System.out.println("\nAppuyer sur une touche pour lancer le d?"); 
+			System.out.println("\nAppuyer sur une touche pour lancer le dé");
 			if(sc.hasNext()) {
 				sc.nextLine();
 				gameState = warriors.nextTurn(gameId);
