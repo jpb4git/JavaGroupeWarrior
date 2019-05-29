@@ -6,16 +6,20 @@ import warriors.contracts.GameState;
 import warriors.contracts.Hero;
 import warriors.contracts.Map;
 import warriors.contracts.WarriorsAPI;
+import warriors.maps.RootMap;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Warriors implements WarriorsAPI {
     private ArrayList<Hero> heroes = new ArrayList<>();
+    private ArrayList<Map> maps = new ArrayList<>();
 
     public Warriors() {
         this.heroes.add(new Wizard("Wizard1", "url",3, 8));
         this.heroes.add(new Swordman("Swordman1", "url",5, 10));
+
+        this.maps.add(new RootMap("Map1", 64));
     }
 
     @Override
@@ -25,7 +29,7 @@ public class Warriors implements WarriorsAPI {
 
     @Override
     public List<Map> getMaps() {
-        return null;
+        return this.maps;
     }
 
     @Override
