@@ -9,9 +9,10 @@ public class State implements GameState {
     private String playerName;
     private Hero hero;
     private Map map;
-    private String gameId;
+    private final String gameId;
     private GameStatus gameStatus;
     private String lastLog;
+    private int currentCase;
 
     public State(String playerName, Hero hero, Map map) {
         this.playerName = playerName;
@@ -20,6 +21,7 @@ public class State implements GameState {
         this.gameId = "#" + ((int) (Math.random() *999 - 1));
         this.gameStatus = GameStatus.IN_PROGRESS;
         this.lastLog = "Début de la partie.";
+        this.currentCase = 0;
     }
 
     public String getPlayerName() {
@@ -53,9 +55,16 @@ public class State implements GameState {
     public String getLastLog() {
         return this.lastLog;
     }
+    public void setLastLog(String lastLog){
+        this.lastLog = lastLog;
+    }
 
     @Override
     public int getCurrentCase() {
-        return 0;
+        return this.currentCase;
+    }
+
+    public void setCurrentCase(int currentCase) {
+        this.currentCase = currentCase;
     }
 }

@@ -1,21 +1,18 @@
 package warriors.engine;
 
+import warriors.contracts.*;
 import warriors.game.states.State;
 import warriors.heroes.Swordman;
 import warriors.heroes.Wizard;
-import warriors.contracts.GameState;
-import warriors.contracts.Hero;
-import warriors.contracts.Map;
-import warriors.contracts.WarriorsAPI;
 import warriors.maps.RootMap;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Warriors implements WarriorsAPI {
     private ArrayList<Hero> heroes = new ArrayList<>();
     private ArrayList<Map> maps = new ArrayList<>();
-    private GameState state;
+    private State state;
 
 
     public Warriors() {
@@ -49,6 +46,22 @@ public class Warriors implements WarriorsAPI {
 
     @Override
     public GameState nextTurn(String gameID) {
+        int currentCase = this.state.getCurrentCase();
+        Random rand = new Random();
+
+        int next = rand.nextInt(6)+1;
+        int newCase = currentCase+next;
+        this.state.setCurrentCase(newCase);
+
+
+        if (newCase > this.getState().getMap().getNumberOfCase() ){
+            state.setGameStatus(GameStatus.FINISHED);
+            state.setLastLog("La partie est terminée.");
+        }else{
+            state.setLastLog("Le joueur est sur la case " + newCase);
+        }
         return this.getState();
+
     }
+
 }

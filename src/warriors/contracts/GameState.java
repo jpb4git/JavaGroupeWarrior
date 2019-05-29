@@ -34,9 +34,10 @@ public interface GameState {
 	 * @return the last log of the game. This log is displayed by the client after each game turn
 	 */
 	String getLastLog();
-	
+
 	/**
 	 * @return the current case
 	 */
-	int getCurrentCase(); 
+	int getCurrentCase();
+
 }
