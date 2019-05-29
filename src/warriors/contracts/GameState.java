@@ -1,5 +1,7 @@
 package warriors.contracts;
 
+import warriors.maps.RootMap;
+
 /**
  * This interface describes the game state which should be return after each game turn
  */

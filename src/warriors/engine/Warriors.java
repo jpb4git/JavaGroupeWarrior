@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class Warriors implements WarriorsAPI {
     private ArrayList<Hero> heroes = new ArrayList<>();
-    private ArrayList<Map> maps = new ArrayList<>();
+    private List<RootMap> maps = new ArrayList<>();
     private State state;
 
 
@@ -23,10 +23,6 @@ public class Warriors implements WarriorsAPI {
 
     }
 
-    public GameState getState() {
-        return state;
-    }
-
 
     @Override
     public List<Hero> getHeroes() {
@@ -34,13 +30,13 @@ public class Warriors implements WarriorsAPI {
     }
 
     @Override
-    public List<Map> getMaps() {
+    public List<? extends Map> getMaps() {
         return this.maps;
     }
 
     @Override
     public GameState createGame(String playerName, Hero hero, Map map) {
-        this.state = new State(playerName, hero, map);
+        this.state = new State(playerName, hero, (RootMap) map);
         return this.state;
     }
 
@@ -54,14 +50,16 @@ public class Warriors implements WarriorsAPI {
         this.state.setCurrentCase(newCase);
 
 
-        if (newCase > this.getState().getMap().getNumberOfCase() ){
+        if (newCase > this.state.getMap().getNumberOfCase() ){
             state.setGameStatus(GameStatus.FINISHED);
             state.setLastLog("La partie est terminée.");
         }else{
-            state.setLastLog("Le joueur est sur la case " + newCase);
-        }
-        return this.getState();
 
+            state.setLastLog("Lancé du dé ! \nLe joueur a fait "+ next +".\nIl excerce un déplacisme sur la case " + newCase + "\n" + this.state.getMap().getInitialBoard().get(newCase));
+
+
+        }
+        return this.state;
     }
 
 }

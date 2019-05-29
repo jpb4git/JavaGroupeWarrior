@@ -4,17 +4,18 @@ import warriors.contracts.GameState;
 import warriors.contracts.GameStatus;
 import warriors.contracts.Hero;
 import warriors.contracts.Map;
+import warriors.maps.RootMap;
 
 public class State implements GameState {
     private String playerName;
     private Hero hero;
-    private Map map;
+    private RootMap map;
     private final String gameId;
     private GameStatus gameStatus;
     private String lastLog;
     private int currentCase;
 
-    public State(String playerName, Hero hero, Map map) {
+    public State(String playerName, Hero hero, RootMap map) {
         this.playerName = playerName;
         this.hero = hero;
         this.map = map;
@@ -37,6 +38,7 @@ public class State implements GameState {
     public GameStatus getGameStatus() {
         return this.gameStatus;
     }
+
     public void setGameStatus(GameStatus gameStatus) {
         this.gameStatus = gameStatus;
     }
@@ -47,7 +49,7 @@ public class State implements GameState {
     }
 
     @Override
-    public Map getMap() {
+    public RootMap getMap() {
         return map;
     }
 
