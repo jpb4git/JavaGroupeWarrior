@@ -26,6 +26,11 @@ public class Warriors implements WarriorsAPI {
 
     }
 
+    public GameState getState() {
+        return state;
+    }
+
+
     @Override
     public List<Hero> getHeroes() {
         return this.heroes;
@@ -38,11 +43,12 @@ public class Warriors implements WarriorsAPI {
 
     @Override
     public GameState createGame(String playerName, Hero hero, Map map) {
-        return new State(playerName, hero, map);
+        this.state = new State(playerName, hero, map);
+        return this.state;
     }
 
     @Override
     public GameState nextTurn(String gameID) {
-        return null;
+        return this.getState();
     }
 }
