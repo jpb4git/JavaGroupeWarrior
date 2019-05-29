@@ -1,4 +1,4 @@
-package warriors.Heroes;
+package warriors.heroes;
 
 import warriors.contracts.Hero;
 

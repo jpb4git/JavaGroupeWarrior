@@ -1,7 +1,7 @@
 package warriors.engine;
 
-import warriors.Heroes.Swordman;
-import warriors.Heroes.Wizard;
+import warriors.heroes.Swordman;
+import warriors.heroes.Wizard;
 import warriors.contracts.GameState;
 import warriors.contracts.Hero;
 import warriors.contracts.Map;
