@@ -55,7 +55,7 @@ public class Warriors implements WarriorsAPI {
             state.setLastLog("La partie est terminée.");
         }else{
 
-            state.setLastLog("Lancé du dé ! \nLe joueur a fait "+ next +".\nIl excerce un déplacisme sur la case " + newCase + "\n" + this.state.getMap().getInitialBoard().get(newCase));
+            state.setLastLog("Lancé du dé ! \nLe joueur a fait "+ next +".\nIl excerce un déplacisme sur la case " + newCase + "\n" + this.state.getMap().getInitialBoard().get(newCase).getClass().getSimpleName());
 
 
         }

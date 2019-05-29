@@ -1,13 +1,16 @@
 package warriors.maps;
 
 import warriors.contracts.Map;
+import warriors.mobs.Dragon;
+import warriors.mobs.Gobelin;
+import warriors.mobs.Warlock;
 
 import java.util.HashMap;
 
 public class RootMap implements Map {
     private String name;
     private int numberOfCase;
-    private  HashMap <Integer , String> initialBoard;
+    private  HashMap <Integer , Object> initialBoard;
 
 
 
@@ -23,7 +26,7 @@ public class RootMap implements Map {
         return name;
     }
 
-    public HashMap<Integer, String> getInitialBoard() {
+    public HashMap<Integer, Object> getInitialBoard() {
         return initialBoard;
     }
 
@@ -33,32 +36,32 @@ public class RootMap implements Map {
 
 
     private void  init(){
-        initialBoard.put(45, "Dragon");
-        initialBoard.put(52, "Dragon");
-        initialBoard.put(56, "Dragon");
-        initialBoard.put(62, "Dragon");
+        initialBoard.put(45, new Dragon());
+        initialBoard.put(52, new Dragon());
+        initialBoard.put(56, new Dragon());
+        initialBoard.put(62, new Dragon());
 
-        initialBoard.put(10, "Sorcier");
-        initialBoard.put(20, "Sorcier");
-        initialBoard.put(25, "Sorcier");
-        initialBoard.put(32, "Sorcier");
-        initialBoard.put(35, "Sorcier");
-        initialBoard.put(36, "Sorcier");
-        initialBoard.put(37, "Sorcier");
-        initialBoard.put(40, "Sorcier");
-        initialBoard.put(44, "Sorcier");
-        initialBoard.put(47, "Sorcier");
+        initialBoard.put(10, new Warlock());
+        initialBoard.put(20, new Warlock());
+        initialBoard.put(25, new Warlock());
+        initialBoard.put(32, new Warlock());
+        initialBoard.put(35, new Warlock());
+        initialBoard.put(36, new Warlock());
+        initialBoard.put(37, new Warlock());
+        initialBoard.put(40, new Warlock());
+        initialBoard.put(44, new Warlock());
+        initialBoard.put(47, new Warlock());
 
-        initialBoard.put(3, "Gobelin");
-        initialBoard.put(6, "Gobelin");
-        initialBoard.put(9, "Gobelin");
-        initialBoard.put(12, "Gobelin");
-        initialBoard.put(15, "Gobelin");
-        initialBoard.put(18, "Gobelin");
-        initialBoard.put(21, "Gobelin");
-        initialBoard.put(24, "Gobelin");
-        initialBoard.put(27, "Gobelin");
-        initialBoard.put(30, "Gobelin");
+        initialBoard.put(3, new Gobelin());
+        initialBoard.put(6, new Gobelin());
+        initialBoard.put(9, new Gobelin());
+        initialBoard.put(12, new Gobelin());
+        initialBoard.put(15, new Gobelin());
+        initialBoard.put(18, new Gobelin());
+        initialBoard.put(21, new Gobelin());
+        initialBoard.put(24, new Gobelin());
+        initialBoard.put(27, new Gobelin());
+        initialBoard.put(30, new Gobelin());
 
 
         initialBoard.put(2, "Arc");
