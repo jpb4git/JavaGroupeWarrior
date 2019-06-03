@@ -21,7 +21,7 @@ public class State implements GameState {
         this.map = map;
         this.gameId = "#" + ((int) (Math.random() *999 - 1));
         this.gameStatus = GameStatus.IN_PROGRESS;
-        this.lastLog = "Début de la partie.";
+        this.lastLog = "Debut de la partie.";
         this.currentCase = 0;
     }
 

@@ -1,16 +1,16 @@
 package warriors.maps;
 
+import warriors.Event;
 import warriors.contracts.Map;
-import warriors.mobs.Dragon;
-import warriors.mobs.Gobelin;
-import warriors.mobs.Warlock;
+import warriors.items.Potion;
+import warriors.mobs.Mob;
 
 import java.util.HashMap;
 
 public class RootMap implements Map {
     private String name;
     private int numberOfCase;
-    private  HashMap <Integer , Object> initialBoard;
+    private  HashMap <Integer , Event> initialBoard;
 
 
 
@@ -26,7 +26,8 @@ public class RootMap implements Map {
         return name;
     }
 
-    public HashMap<Integer, Object> getInitialBoard() {
+    public HashMap<Integer, Event> getInitialBoard() {
+
         return initialBoard;
     }
 
@@ -36,35 +37,22 @@ public class RootMap implements Map {
 
 
     private void  init(){
-        initialBoard.put(45, new Dragon());
-        initialBoard.put(52, new Dragon());
-        initialBoard.put(56, new Dragon());
-        initialBoard.put(62, new Dragon());
 
-        initialBoard.put(10, new Warlock());
-        initialBoard.put(20, new Warlock());
-        initialBoard.put(25, new Warlock());
-        initialBoard.put(32, new Warlock());
-        initialBoard.put(35, new Warlock());
-        initialBoard.put(36, new Warlock());
-        initialBoard.put(37, new Warlock());
-        initialBoard.put(40, new Warlock());
-        initialBoard.put(44, new Warlock());
-        initialBoard.put(47, new Warlock());
+        for(int i : new int[]{45, 52, 56, 62 }) {
+            initialBoard.put(i, new Mob("Dragon",15,4));
 
-        initialBoard.put(3, new Gobelin());
-        initialBoard.put(6, new Gobelin());
-        initialBoard.put(9, new Gobelin());
-        initialBoard.put(12, new Gobelin());
-        initialBoard.put(15, new Gobelin());
-        initialBoard.put(18, new Gobelin());
-        initialBoard.put(21, new Gobelin());
-        initialBoard.put(24, new Gobelin());
-        initialBoard.put(27, new Gobelin());
-        initialBoard.put(30, new Gobelin());
+        }
+
+        for(int i : new int[]{10,20, 25, 32, 35, 36, 37, 40 , 44, 47}) {
+            initialBoard.put(i, new Mob("Warlock", 9, 2));
+        }
 
 
-        initialBoard.put(2, "Arc");
+        for (int i=3; i<=30; i+=3) {
+            initialBoard.put(i, new Mob("Gobelin",6,1));
+        }
+
+       /* initialBoard.put(2, "Arc");
         initialBoard.put(11, "Arc");
         initialBoard.put(14, "Arc");
         initialBoard.put(19, "Arc");
@@ -84,21 +72,21 @@ public class RootMap implements Map {
         initialBoard.put(23, "Sort \"éclair\"");
 
         initialBoard.put(48, "Sort \"boule de feu\"");
-        initialBoard.put(49, "Sort \"boule de feu\"");
+        initialBoard.put(49, "Sort \"boule de feu\"");*/
 
-        initialBoard.put(7, "Potion mineure");
-        initialBoard.put(13, "Potion mineure");
-        initialBoard.put(28, "Potion mineure");
-        initialBoard.put(29, "Potion mineure");
-        initialBoard.put(33, "Potion mineure");
+        initialBoard.put(7, new Potion("Potion mineure",1));
+        initialBoard.put(13, new Potion("Potion mineure",1));
+        initialBoard.put(28, new Potion("Potion mineure",1));
+        initialBoard.put(29, new Potion("Potion mineure",1));
+        initialBoard.put(33, new Potion("Potion mineure",1));
 
-        initialBoard.put(31, "Potion standard");
-        initialBoard.put(39, "Potion standard");
-        initialBoard.put(43, "Potion standard");
+        initialBoard.put(31, new Potion("Potion standard",2));
+        initialBoard.put(39, new Potion("Potion standard",2));
+        initialBoard.put(43, new Potion("Potion standard",2));
 
-        initialBoard.put(41, "Potion maxi");
+        initialBoard.put(41, new Potion("Potion maxi",5));
 
-        initialBoard.put(16, "Vide");
+        /*initialBoard.put(16, "Vide");
         initialBoard.put(34, "Vide");
         initialBoard.put(46, "Vide");
         initialBoard.put(50, "Vide");
@@ -111,7 +99,7 @@ public class RootMap implements Map {
         initialBoard.put(60, "Vide");
         initialBoard.put(61, "Vide");
         initialBoard.put(63, "Vide");
-        initialBoard.put(64, "Vide");
+        initialBoard.put(64, "Vide");*/
 
 
     }
