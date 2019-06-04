@@ -1,9 +1,9 @@
 package warriors.items;
 
-import warriors.Case;
+import warriors.Content;
 import warriors.heroes.AbstractHero;
 
-public class Potion extends Case {
+public class Potion extends Content {
     private int healPts;
 
     public Potion(String name, int healPts){
@@ -20,4 +20,5 @@ public class Potion extends Case {
     public int getHealPts() {
         return this.healPts;
     }
+
 }

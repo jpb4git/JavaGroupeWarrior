@@ -1,6 +1,7 @@
 package warriors.maps;
 
 import warriors.Case;
+import warriors.Content;
 import warriors.contracts.Map;
 import warriors.items.Blank;
 import warriors.items.Potion;
@@ -40,40 +41,40 @@ public class RootMap implements Map {
     private void init() {
 
         for (int i = 0; i < 14; i++) {
-            initialBoard.add(new Blank("Case vide"));
+            initialBoard.add(new Case(new Blank("Case vide")));
         }
         for (int i = 0; i < 4; i++) {
-            initialBoard.add(new Mob("Dragon", 15, 4));
+            initialBoard.add(new Case(new Mob("Dragon", 15, 4)));
         }
         for (int i = 0; i < 10; i++) {
-            initialBoard.add(new Mob("Warlock", 9, 2));
+            initialBoard.add(new Case(new Mob("Warlock", 9, 2)));
         }
 
         for (int i = 0; i < 10; i++) {
-            initialBoard.add(new Mob("Gobelin", 6, 1));
+            initialBoard.add(new Case(new Mob("Gobelin", 6, 1)));
         }
         for (int i = 0; i < 5; i++) {
-            initialBoard.add(new Weapon("Arc", 1));
+            initialBoard.add(new Case(new Weapon("Arc", 1)));
         }
         for (int i = 0; i < 3; i++) {
-            initialBoard.add(new Weapon("Massue", 3));
+            initialBoard.add(new Case(new Weapon("Massue", 3)));
         }
         for (int i = 0; i < 2; i++) {
-            initialBoard.add(new Weapon("Epee", 5));
+            initialBoard.add(new Case(new Weapon("Epee", 5)));
         }
         for (int i = 0; i < 5; i++) {
-            initialBoard.add(new Spell("Sort \"eclair\"", 2));
+            initialBoard.add(new Case(new Spell("Sort \"eclair\"", 2)));
         }
         for (int i = 0; i < 2; i++) {
-            initialBoard.add(new Spell("Sort \"boule de feu\"", 7));
+            initialBoard.add(new Case(new Spell("Sort \"boule de feu\"", 7)));
         }
         for (int i = 0; i < 5; i++) {
-            initialBoard.add(new Potion("Potion mineure", 1));
+            initialBoard.add(new Case(new Potion("Potion mineure", 1)));
         }
         for (int i = 0; i < 3; i++) {
-            initialBoard.add(new Potion("Potion standard", 2));
+            initialBoard.add(new Case(new Potion("Potion standard", 2)));
         }
-        initialBoard.add(41, new Potion("Potion maxi", 5));
+        initialBoard.add(new Case(new Potion("Potion maxi", 5)));
 
         Collections.shuffle(initialBoard,new Random(150));
     }

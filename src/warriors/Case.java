@@ -1,17 +1,17 @@
 package warriors;
 
-import warriors.contracts.Hero;
-import warriors.heroes.AbstractHero;
+public class Case {
+    private Content content;
 
-public abstract class Case {
-private String name;
-
-    public Case(String name) {
-        this.name = name;
+    public Case(Content content) {
+        this.content = content;
     }
 
-    public String getName() {
-        return name;
+    public Content getContent() {
+        return content;
     }
-    public abstract String doEvent(AbstractHero hero);
+
+    public void setContent(Content content) {
+        this.content = content;
+    }
 }

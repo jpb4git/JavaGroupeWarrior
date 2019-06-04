@@ -1,9 +1,9 @@
 package warriors.items;
 
-import warriors.Case;
+import warriors.Content;
 import warriors.heroes.AbstractHero;
 
-public class Blank extends Case{
+public class Blank extends Content {
     public Blank(String name) {
         super(name);
     }
