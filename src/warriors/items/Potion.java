@@ -1,10 +1,9 @@
 package warriors.items;
 
-import warriors.Event;
-import warriors.contracts.Hero;
+import warriors.Case;
 import warriors.heroes.AbstractHero;
 
-public class Potion extends Event {
+public class Potion extends Case {
     private int healPts;
 
     public Potion(String name, int healPts){

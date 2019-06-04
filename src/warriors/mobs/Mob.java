@@ -1,10 +1,9 @@
 package warriors.mobs;
 
-import warriors.Event;
-import warriors.contracts.Hero;
+import warriors.Case;
 import warriors.heroes.AbstractHero;
 
-public class Mob extends Event {
+public class Mob extends Case {
 
     private int healthPts;
     private int attackPts;

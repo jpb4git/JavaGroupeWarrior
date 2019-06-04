@@ -53,7 +53,8 @@ public class Warriors implements WarriorsAPI {
 
         if (newCase > this.state.getMap().getNumberOfCase()) {
             state.setGameStatus(GameStatus.FINISHED);
-            state.setLastLog("La partie est terminee.");
+            state.setLastLog("Lancoiemment du cube ! \n Le joueur a fait " + next +" il se deplace sur la case finale !!" +"\n" +
+                    "La partie est terminee.");
         } else {
             String message;
 
@@ -68,7 +69,7 @@ public class Warriors implements WarriorsAPI {
                 Hero hero = state.getHero();
                 String eventAction = this.state.getMap()
                         .getInitialBoard()
-                        .get(newCase).doEvent((AbstractHero)hero);
+                        .get(newCase).doEvent((AbstractHero) hero);
 
                 message += eventName + "\n";
                 message += eventAction + "\n";

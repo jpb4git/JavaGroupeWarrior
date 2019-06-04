@@ -1,10 +1,9 @@
 package warriors.items;
 
-import warriors.Event;
-import warriors.contracts.Hero;
+import warriors.Case;
 import warriors.heroes.AbstractHero;
 
-public class Spell extends Event {
+public class Spell extends Case {
     private int attackBonus;
 
     public Spell(String name, int attackBonus) {

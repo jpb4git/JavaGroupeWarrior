@@ -3,10 +3,10 @@ package warriors;
 import warriors.contracts.Hero;
 import warriors.heroes.AbstractHero;
 
-public abstract class Event {
+public abstract class Case {
 private String name;
 
-    public Event(String name) {
+    public Case(String name) {
         this.name = name;
     }
 
