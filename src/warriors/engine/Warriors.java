@@ -2,6 +2,7 @@ package warriors.engine;
 
 import warriors.contracts.*;
 import warriors.game.states.State;
+import warriors.heroes.AbstractHero;
 import warriors.heroes.Swordman;
 import warriors.heroes.Wizard;
 import warriors.maps.RootMap;
@@ -67,7 +68,7 @@ public class Warriors implements WarriorsAPI {
                 Hero hero = state.getHero();
                 String eventAction = this.state.getMap()
                         .getInitialBoard()
-                        .get(newCase).doEvent(hero);
+                        .get(newCase).doEvent((AbstractHero)hero);
 
                 message += eventName + "\n";
                 message += eventAction + "\n";

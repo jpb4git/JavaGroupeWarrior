@@ -3,6 +3,8 @@ package warriors.maps;
 import warriors.Event;
 import warriors.contracts.Map;
 import warriors.items.Potion;
+import warriors.items.Spell;
+import warriors.items.Weapon;
 import warriors.mobs.Mob;
 
 import java.util.HashMap;
@@ -52,27 +54,27 @@ public class RootMap implements Map {
             initialBoard.put(i, new Mob("Gobelin",6,1));
         }
 
-       /* initialBoard.put(2, "Arc");
-        initialBoard.put(11, "Arc");
-        initialBoard.put(14, "Arc");
-        initialBoard.put(19, "Arc");
-        initialBoard.put(26, "Arc");
+        initialBoard.put(2, new Weapon("Arc",1));
+        initialBoard.put(11, new Weapon("Arc",1));
+        initialBoard.put(14, new Weapon("Arc",1));
+        initialBoard.put(19, new Weapon("Arc",1));
+        initialBoard.put(26, new Weapon("Arc",1));
 
-        initialBoard.put(5, "Massue");
-        initialBoard.put(22, "Massue");
-        initialBoard.put(38, "Massue");
+        initialBoard.put(5, new Weapon("Massue",3));
+        initialBoard.put(22, new Weapon("Massue",3));
+        initialBoard.put(38, new Weapon("Massue",3));
 
-        initialBoard.put(42, "Epée");
-        initialBoard.put(53, "Epée");
+        initialBoard.put(42, new Weapon("Epee",5));
+        initialBoard.put(53, new Weapon("Epee",5));
 
-        initialBoard.put(1, "Sort \"éclair\"");
-        initialBoard.put(4, "Sort \"éclair\"");
-        initialBoard.put(8, "Sort \"éclair\"");
-        initialBoard.put(17, "Sort \"éclair\"");
-        initialBoard.put(23, "Sort \"éclair\"");
+        initialBoard.put(1, new Spell("Sort \"eclair\"",2));
+        initialBoard.put(4, new Spell("Sort \"eclair\"",2));
+        initialBoard.put(8, new Spell("Sort \"eclair\"",2));
+        initialBoard.put(17, new Spell("Sort \"eclair\"",2));
+        initialBoard.put(23, new Spell("Sort \"eclair\"",2));
 
-        initialBoard.put(48, "Sort \"boule de feu\"");
-        initialBoard.put(49, "Sort \"boule de feu\"");*/
+        initialBoard.put(48, new Spell("Sort \"boule de feu\"",7));
+        initialBoard.put(49, new Spell("Sort \"boule de feu\"",7));
 
         initialBoard.put(7, new Potion("Potion mineure",1));
         initialBoard.put(13, new Potion("Potion mineure",1));
@@ -85,22 +87,6 @@ public class RootMap implements Map {
         initialBoard.put(43, new Potion("Potion standard",2));
 
         initialBoard.put(41, new Potion("Potion maxi",5));
-
-        /*initialBoard.put(16, "Vide");
-        initialBoard.put(34, "Vide");
-        initialBoard.put(46, "Vide");
-        initialBoard.put(50, "Vide");
-        initialBoard.put(51, "Vide");
-        initialBoard.put(54, "Vide");
-        initialBoard.put(55, "Vide");
-        initialBoard.put(57, "Vide");
-        initialBoard.put(58, "Vide");
-        initialBoard.put(59, "Vide");
-        initialBoard.put(60, "Vide");
-        initialBoard.put(61, "Vide");
-        initialBoard.put(63, "Vide");
-        initialBoard.put(64, "Vide");*/
-
 
     }
 }

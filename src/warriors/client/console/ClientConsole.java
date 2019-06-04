@@ -59,7 +59,7 @@ public class ClientConsole {
 
 		while (gameState.getGameStatus() == GameStatus.IN_PROGRESS) {
 			System.out.println(gameState.getLastLog());
-			System.out.println("\nAppuyer sur une touche pour lancer le dé");
+			System.out.println("\nAppuyer sur une touche pour lancer le de");
 
 				sc.nextLine();
 				gameState = warriors.nextTurn(gameId);

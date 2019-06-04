@@ -2,18 +2,19 @@ package warriors.items;
 
 import warriors.Event;
 import warriors.contracts.Hero;
+import warriors.heroes.AbstractHero;
 
 public class Weapon extends Event {
+private int attackBonus;
 
-    @Override
-    public String doEvent(Hero hero) {
-        return null;
-    }
-
-    public Weapon(String name) {
+    public Weapon(String name, int attackBonus) {
         super(name);
+        this.attackBonus = attackBonus;
     }
-    /*public Weapon(int attackBonus){
-        super(attackBonus);
-    }*/
+
+    public String doEvent(AbstractHero hero) {
+        hero.setAttackLevel(hero.getAttackLevel() + this.attackBonus);
+        return "Le hero recoit "+ this.attackBonus + " points d'attaque"+"\n"+"Il a maintenant "+hero.getAttackLevel()+" points d'attaque";
+    }
+
 }

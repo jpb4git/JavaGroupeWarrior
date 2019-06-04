@@ -2,6 +2,7 @@ package warriors.mobs;
 
 import warriors.Event;
 import warriors.contracts.Hero;
+import warriors.heroes.AbstractHero;
 
 public class Mob extends Event {
 
@@ -15,7 +16,7 @@ public class Mob extends Event {
     }
 
     @Override
-    public String doEvent(Hero hero) {
+    public String doEvent(AbstractHero hero) {
         return "Points de vie = " + this.healthPts + "\n" + "Points d'attaque : " + this.attackPts;
     }
 

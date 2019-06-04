@@ -1,6 +1,7 @@
 package warriors;
 
 import warriors.contracts.Hero;
+import warriors.heroes.AbstractHero;
 
 public abstract class Event {
 private String name;
@@ -12,5 +13,5 @@ private String name;
     public String getName() {
         return name;
     }
-    public abstract String doEvent(Hero hero);
+    public abstract String doEvent(AbstractHero hero);
 }

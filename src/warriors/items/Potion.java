@@ -13,10 +13,9 @@ public class Potion extends Event {
     }
 
     @Override
-    public String doEvent(Hero hero) {
-        AbstractHero player = (AbstractHero) hero;
-        player.setLife(player.getLife() + this.healPts);
-        return "Le hero recoit "+ this.healPts + " points de vie"+"\n"+"Il a maintenant "+player.getLife()+" points de vie";
+    public String doEvent(AbstractHero hero) {
+        hero.setLife(hero.getLife() + this.healPts);
+        return "Le hero recoit "+ this.healPts + " points de vie"+"\n"+"Il a maintenant "+hero.getLife()+" points de vie";
     }
 
     public int getHealPts() {
