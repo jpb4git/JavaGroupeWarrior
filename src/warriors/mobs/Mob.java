@@ -1,6 +1,7 @@
 package warriors.mobs;
 
 import warriors.Content;
+import warriors.Offensive;
 import warriors.heroes.AbstractHero;
 
 public class Mob extends Content {
@@ -22,13 +23,13 @@ public class Mob extends Content {
     }
     private String fight(AbstractHero hero){
         String message = "Debut du combat.\n";
-        int heroAttackPts = hero.getAttackLevel() + hero.getBoostAttack();
+        int heroAttackPts = (hero.getEquipment() == null)? hero.getAttackLevel() : hero.getAttackLevel() + hero.getEquipment().getAttackBonus();
         this.healthPts -= heroAttackPts;
 
         message += "Le hero enleve " + heroAttackPts + " points de vie a l'ennemi. ";
 
         if(this.healthPts > 0){
-            message += "Il lui reste " + this.healthPts + "points de vie.\n";
+            message += "Il lui reste " + this.healthPts + " points de vie.\n";
             message += "L'ennemi enleve "+ this.attackPts +" points de vie au hero.\n";
             int heroLife = hero.getLife()-this.attackPts;
             hero.setLife(heroLife);
@@ -39,9 +40,7 @@ public class Mob extends Content {
         message += " ";
         message += "Fin du combat.\n";
         if(hero.getLife() > 0){
-            message += "Le héro va bien. Il lui reste " + hero.getLife();
-        }else{
-            message += "Le héro est mort.";
+            message += "Le hero va bien. Il lui reste " + hero.getLife() + " points de vie";
         }
         return message;
     }

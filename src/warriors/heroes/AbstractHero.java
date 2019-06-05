@@ -1,6 +1,7 @@
 package warriors.heroes;
 
 import warriors.Content;
+import warriors.Offensive;
 import warriors.contracts.Hero;
 
 public abstract class AbstractHero implements Hero {
@@ -8,8 +9,7 @@ public abstract class AbstractHero implements Hero {
     private String image;
     private int life;
     private int attackLevel;
-    private int boostAttack;
-    private Content equipment;
+    private Offensive equipment;
 
 
     public AbstractHero(String name, String image, int life, int attackLevel) {
@@ -17,23 +17,14 @@ public abstract class AbstractHero implements Hero {
         this.image = image;
         this.life = life;
         this.attackLevel = attackLevel;
-        this.boostAttack = 0;
     }
 
-    public Content getEquipment() {
+    public Offensive getEquipment() {
         return equipment;
     }
 
-    public void setEquipment(Content equipment) {
+    public void setEquipment(Offensive equipment) {
         this.equipment = equipment;
-    }
-
-    public int getBoostAttack() {
-        return boostAttack;
-    }
-
-    public void setBoostAttack(int boostAttack) {
-        this.boostAttack = boostAttack;
     }
 
     @Override

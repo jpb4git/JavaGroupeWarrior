@@ -20,9 +20,13 @@ public class Warriors implements WarriorsAPI {
     public Warriors() {
         this.heroes.add(new Wizard("Wizard1", "url", 3, 8));
         this.heroes.add(new Swordman("Swordman1", "url", 5, 5));
-
         this.maps.add(new RootMap("Map1", 64));
 
+    }
+    private void initHeroes(){
+        this.heroes.set(0, new Wizard("Wizard1", "url", 3, 8));
+        this.heroes.set(1, new Swordman("Swordman1", "url", 5, 5));
+        this.maps.set(0, new RootMap("Map1", 64));
     }
 
     @Override
@@ -51,11 +55,7 @@ public class Warriors implements WarriorsAPI {
         this.state.setCurrentCase(newCase);
 
 
-        if (newCase > this.state.getMap().getNumberOfCase()) {
-            state.setGameStatus(GameStatus.FINISHED);
-            state.setLastLog("Lancoiemment du cube ! \nLe joueur a fait " + next +" il se deplace sur la case finale !!" +"\n" +
-                    "La partie est terminee.");
-        } else {
+
             String message;
 
             message = "Lancoiemment du cube ! \n Le joueur a fait " + next + ".\nIl excerce un deplacisme sur la case " + newCase + "\n";
@@ -75,10 +75,21 @@ public class Warriors implements WarriorsAPI {
                 message += eventAction + "\n";
 
             } catch (Exception e) {
-                message += "La case est vide";
+                System.err.println(e.getMessage());
+            }
+
+            if (this.state.getHero().getLife() <= 0){
+                state.setGameStatus(GameStatus.FINISHED);
+                message += "Le hero est mort ... GAME OVER !!";
+                this.initHeroes();
+            }else if (newCase > this.state.getMap().getNumberOfCase()) {
+                state.setGameStatus(GameStatus.FINISHED);
+                state.setLastLog("Lancoiemment du cube ! \nLe joueur a fait " + next + " il se deplace sur la case finale !!" + "\n" +
+                        "La partie est terminee.");
+                this.initHeroes();
             }
             state.setLastLog(message);
-        }
+
         return this.state;
     }
 }

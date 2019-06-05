@@ -76,6 +76,11 @@ public class RootMap implements Map {
         }
         initialBoard.add(new Case(new Potion("Potion maxi", 5)));
 
-        Collections.shuffle(initialBoard,new Random(150));
+        Collections.shuffle(initialBoard, new Random(150));
+       /* int i = 0;
+        for (Case index : initialBoard) {
+            System.out.println(i +" " +index.getContent().getName());
+            i++;
+        }*/
     }
 }

@@ -63,7 +63,6 @@ public class ClientConsole {
 
 				sc.nextLine();
 				gameState = warriors.nextTurn(gameId);
-
 		}
 		
 		System.out.println(gameState.getLastLog());

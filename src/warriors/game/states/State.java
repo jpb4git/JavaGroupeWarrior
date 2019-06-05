@@ -22,7 +22,7 @@ public class State implements GameState {
         this.gameId = "#" + ((int) (Math.random() *999 - 1));
         this.gameStatus = GameStatus.IN_PROGRESS;
         this.lastLog = "Debut de la partie.";
-        this.currentCase = 0;
+        this.currentCase = -1;
     }
 
     public String getPlayerName() {
