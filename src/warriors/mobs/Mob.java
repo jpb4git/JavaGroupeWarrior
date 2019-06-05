@@ -34,6 +34,7 @@ public class Mob extends Content {
             int heroLife = hero.getLife()-this.attackPts;
             hero.setLife(heroLife);
         }else{
+            this.tileToClear = true;
             message += "Il a ete eradique.\n";
         }
 

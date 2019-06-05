@@ -15,6 +15,7 @@ public class Spell extends Offensive {
     public String doEvent(AbstractHero hero) {
         if (hero instanceof Wizard) {
             hero.setEquipment(this);
+            this.tileToClear = true;
             return "Le hero recoit " + this.attackBonus + " points d'attaque";
         } else {
             return "Le hero ne peut pas s'equiper de " + this.getName();

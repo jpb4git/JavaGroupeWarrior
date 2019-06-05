@@ -14,6 +14,7 @@ public class Potion extends Content {
     @Override
     public String doEvent(AbstractHero hero) {
         hero.setLife(hero.getLife() + this.healPts);
+        this.tileToClear = true;
         return "Le hero recoit "+ this.healPts + " points de vie"+"\n"+"Il a maintenant "+hero.getLife()+" points de vie";
     }
 

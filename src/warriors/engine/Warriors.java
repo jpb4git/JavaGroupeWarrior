@@ -69,7 +69,7 @@ public class Warriors implements WarriorsAPI {
                 Hero hero = state.getHero();
                 String eventAction = this.state.getMap()
                         .getInitialBoard()
-                        .get(newCase).getContent().doEvent((AbstractHero) hero);
+                        .get(newCase).prepareEvent((AbstractHero) hero);
 
                 message += eventName + "\n";
                 message += eventAction + "\n";
