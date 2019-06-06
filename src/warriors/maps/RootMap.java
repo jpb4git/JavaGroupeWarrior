@@ -11,6 +11,10 @@ import warriors.mobs.Mob;
 
 import java.util.*;
 
+
+/**
+ * Implement Map - Board containing a specific set of tile
+ */
 public class RootMap implements Map {
     private String name;
     private int numberOfCase;
@@ -24,20 +28,10 @@ public class RootMap implements Map {
         this.init();
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public ArrayList<Case> getInitialBoard() {
-
-        return initialBoard;
-    }
-
-    public int getNumberOfCase() {
-        return numberOfCase;
-    }
-
-
+    /**
+     * Set up all required tiles by type and shuffle them
+     */
     private void init() {
 
         for (int i = 0; i < 14; i++) {
@@ -82,5 +76,18 @@ public class RootMap implements Map {
             System.out.println(i +" " +index.getContent().getName());
             i++;
         }*/
+    }
+    /*****************************   GETTERs/SETTERs   *************************/
+
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<Case> getInitialBoard() {
+        return initialBoard;
+    }
+
+    public int getNumberOfCase() {
+        return numberOfCase;
     }
 }

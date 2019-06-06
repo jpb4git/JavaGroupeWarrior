@@ -4,6 +4,9 @@ import warriors.Content;
 import warriors.Offensive;
 import warriors.heroes.AbstractHero;
 
+/**
+ * Main ennemi class available on tiles
+ */
 public class Mob extends Content {
 
     private int healthPts;
@@ -15,12 +18,22 @@ public class Mob extends Content {
         this.attackPts = attackPts;
     }
 
+    /**
+     * Action to be performed when player reach a tile containing a mob
+     * @param hero (Hero) - Hero that item has to be applied
+     * @return (String) - Message about the equipment being applied or not.
+     */
     @Override
     public String doEvent(AbstractHero hero) {
         String status = "Points de vie : " + this.healthPts + " - " + "Points d'attaque : " + this.attackPts + "\n";
         status += fight(hero);
         return status;
     }
+
+    /**
+     * @param hero (Hero) - Hero that has to fight against the mob
+     * @return message (String) - Display the fight summary
+     */
     private String fight(AbstractHero hero){
         String message = "Debut du combat.\n";
         int heroAttackPts = (hero.getEquipment() == null)? hero.getAttackLevel() : hero.getAttackLevel() + hero.getEquipment().getAttackBonus();
@@ -46,6 +59,7 @@ public class Mob extends Content {
         return message;
     }
 
+    /*****************************   GETTERs/SETTERs   *************************/
     public int getHealthPts() {
         return healthPts;
     }

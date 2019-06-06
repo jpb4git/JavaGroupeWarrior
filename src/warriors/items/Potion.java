@@ -2,7 +2,9 @@ package warriors.items;
 
 import warriors.Content;
 import warriors.heroes.AbstractHero;
-
+/**
+ * Extands Content - Potion tile on board
+ */
 public class Potion extends Content {
     private int healPts;
 
@@ -11,6 +13,11 @@ public class Potion extends Content {
         this.healPts = healPts;
     }
 
+    /**
+     * Action to be performed when player reach a tile containing this item
+     * @param hero (Hero) - Hero that item has to be applied
+     * @return (String) - Message about the equipment being applied or not.
+     */
     @Override
     public String doEvent(AbstractHero hero) {
         hero.setLife(hero.getLife() + this.healPts);

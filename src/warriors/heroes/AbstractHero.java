@@ -4,6 +4,9 @@ import warriors.Content;
 import warriors.Offensive;
 import warriors.contracts.Hero;
 
+/**
+ * (ABSTRACT) Main hero class
+ */
 public abstract class AbstractHero implements Hero {
     private String name;
     private String image;
@@ -19,6 +22,8 @@ public abstract class AbstractHero implements Hero {
         this.attackLevel = attackLevel;
     }
 
+    /*****************************   GETTERs/SETTERs   *************************/
+
     public Offensive getEquipment() {
         return equipment;
     }
@@ -26,6 +31,8 @@ public abstract class AbstractHero implements Hero {
     public void setEquipment(Offensive equipment) {
         this.equipment = equipment;
     }
+
+    /**----------**/
 
     @Override
     public String getName() {
@@ -36,6 +43,8 @@ public abstract class AbstractHero implements Hero {
         this.name = name;
     }
 
+    /**----------**/
+
     public String getImage() {
         return image;
     }
@@ -43,6 +52,8 @@ public abstract class AbstractHero implements Hero {
     public void setImage(String image) {
         this.image = image;
     }
+
+    /**----------**/
 
     @Override
     public int getLife() {
@@ -52,6 +63,8 @@ public abstract class AbstractHero implements Hero {
     public void setLife(int life) {
         this.life = life;
     }
+
+    /**----------**/
 
     public int getAttackLevel() {
         return attackLevel;
