@@ -19,31 +19,36 @@ public class Warriors implements WarriorsAPI {
     private ArrayList<Hero> heroes = new ArrayList<>();
     private List<RootMap> maps = new ArrayList<>();
     private State state;
+    private ArrayList<Integer> scenario;
+    private int nbTurn;
 
 
-    public Warriors() {
+    public Warriors(ArrayList<Integer> scenario) {
         this.heroes.add(new Wizard("Wizard1", "url", 3, 8));
         this.heroes.add(new Swordman("Swordman1", "url", 5, 5));
-        this.maps.add(new RootMap("Map1", 64));
-
+        this.maps.add(new RootMap("Map1", 64, scenario));
+        this.scenario = scenario;
+        this.nbTurn = 0;
     }
 
 
     /**
      * Reset heroes an maps when restarting a game
      */
-    private void initHeroes(){
+    private void initHeroes() {
         this.heroes.set(0, new Wizard("Wizard1", "url", 3, 8));
         this.heroes.set(1, new Swordman("Swordman1", "url", 5, 5));
-        this.maps.set(0, new RootMap("Map1", 64));
+        this.maps.set(0, new RootMap("Map1", 64, scenario));
+        this.nbTurn = 0;
     }
 
 
     /**
      * Create a new game
+     *
      * @param playerName (String) - Name choosen by the player
-     * @param hero (Hero) - Hero object selected by the player
-     * @param map (Map) - Board choosen by the player
+     * @param hero       (Hero) - Hero object selected by the player
+     * @param map        (Map) - Board choosen by the player
      * @return state (State) - State of a game containing all informations about a game at a given turn
      */
     @Override
@@ -58,16 +63,26 @@ public class Warriors implements WarriorsAPI {
      */
     @Override
     public GameState nextTurn(String gameID) {
+        String message;
         int currentCase = this.state.getCurrentCase();
         Random rand = new Random();
+        int next;
+        if (scenario == null || nbTurn >= scenario.size()) {
+            next = rand.nextInt(6) + 1;
+        } else {
+            next = this.scenario.get(this.nbTurn);
+            this.nbTurn++;
+        }
 
-        int next = rand.nextInt(6) + 1;
+        message = "Lancoiemment du cube ! \n ";
         int newCase = currentCase + next;
+        if( newCase> this.state.getMap().getNumberOfCase()-1){
+            newCase = this.state.getMap().getNumberOfCase()-1;
+            message += "Le joueur a fait " + next + ".\nLe joueur est arriv sur la derniere case.\n";
+        }else{
+            message += "Le joueur a fait " + next + ".\nIl excerce un deplacisme sur la case " + (newCase+1) + "\n";
+        }
         this.state.setCurrentCase(newCase);
-
-        String message;
-
-        message = "Lancoiemment du cube ! \n Le joueur a fait " + next + ".\nIl excerce un deplacisme sur la case " + newCase + "\n";
 
         try {
 
@@ -87,14 +102,13 @@ public class Warriors implements WarriorsAPI {
             System.err.println(e.getMessage());
         }
 
-        if (this.state.getHero().getLife() <= 0){
+        if (this.state.getHero().getLife() <= 0) {
             state.setGameStatus(GameStatus.FINISHED);
             message += "Le hero est mort ... GAME OVER !!";
             this.initHeroes();
-        }else if (newCase > this.state.getMap().getNumberOfCase()) {
+        } else if (newCase >= this.state.getMap().getNumberOfCase()-1) {
             state.setGameStatus(GameStatus.FINISHED);
-            state.setLastLog("Lancoiemment du cube ! \nLe joueur a fait " + next + " il se deplace sur la case finale !!" + "\n" +
-                    "La partie est terminee.");
+            message +="La partie est terminee.";
             this.initHeroes();
         }
         state.setLastLog(message);

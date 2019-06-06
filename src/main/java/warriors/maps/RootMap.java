@@ -19,12 +19,13 @@ public class RootMap implements Map {
     private String name;
     private int numberOfCase;
     private ArrayList<Case> initialBoard;
+    private ArrayList<Integer> scenario;
 
-
-    public RootMap(String name, int numberOfCase) {
+    public RootMap(String name, int numberOfCase, ArrayList<Integer> scenario) {
         this.name = name;
         this.numberOfCase = numberOfCase;
         this.initialBoard = new ArrayList<>();
+        this.scenario = scenario;
         this.init();
     }
 
@@ -70,13 +71,16 @@ public class RootMap implements Map {
         }
         initialBoard.add(new Case(new Potion("Potion maxi", 5)));
 
-        Collections.shuffle(initialBoard, new Random(150));
+        if (scenario == null) {
+            Collections.shuffle(initialBoard, new Random(150));
        /* int i = 0;
         for (Case index : initialBoard) {
             System.out.println(i +" " +index.getContent().getName());
             i++;
         }*/
+        }
     }
+
     /*****************************   GETTERs/SETTERs   *************************/
 
     public String getName() {
