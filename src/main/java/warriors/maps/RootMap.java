@@ -1,5 +1,6 @@
 package warriors.maps;
 
+import com.google.gson.Gson;
 import warriors.Case;
 import warriors.Content;
 import warriors.contracts.Map;
@@ -9,6 +10,7 @@ import warriors.items.Spell;
 import warriors.items.Weapon;
 import warriors.mobs.Mob;
 
+import java.lang.reflect.GenericDeclaration;
 import java.util.*;
 
 
@@ -73,12 +75,16 @@ public class RootMap implements Map {
 
         if (scenario == null) {
             Collections.shuffle(initialBoard, new Random(150));
-       /* int i = 0;
-        for (Case index : initialBoard) {
-            System.out.println(i +" " +index.getContent().getName());
-            i++;
-        }*/
         }
+
+               /* int i = 0;
+                for (Case index : initialBoard) {
+                    System.out.println(i +" " +index.getContent().getName());
+                    i++;
+                }*/
+
+
+
     }
 
     /*****************************   GETTERs/SETTERs   *************************/

@@ -5,6 +5,7 @@ import warriors.game.states.State;
 import warriors.heroes.AbstractHero;
 import warriors.heroes.Swordman;
 import warriors.heroes.Wizard;
+import warriors.jsonManager.JsonManager;
 import warriors.maps.RootMap;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import java.util.Random;
  */
 public class Warriors implements WarriorsAPI {
     private ArrayList<Hero> heroes = new ArrayList<>();
+    private JsonManager jsonManager;
     private List<RootMap> maps = new ArrayList<>();
     private State state;
     private ArrayList<Integer> scenario;

@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.google.gson.Gson;
 import warriors.contracts.GameState;
 import warriors.contracts.GameStatus;
 import warriors.contracts.Hero;
@@ -18,6 +19,9 @@ public class ClientConsole {
 
 
     public static void main(String[] args) {
+
+
+
         ArrayList<Integer> scenario = null;
         if(args.length > 0){
             scenario =  csvToArraylist(args[0]);
@@ -36,6 +40,7 @@ public class ClientConsole {
     }
 
     private static void startGame(WarriorsAPI warriors, Scanner sc) {
+
         System.out.println();
         System.out.println("Entrez votre nom:");
         String playerName = sc.nextLine();
@@ -58,6 +63,11 @@ public class ClientConsole {
 
         GameState gameState = warriors.createGame(playerName, chosenHeroe, choosenMap);
         String gameId = gameState.getGameId();
+
+
+        Gson gson = new Gson();
+        String Result =  gson.toJson(gameState.getMap());
+        System.out.println(Result);
 
         while (gameState.getGameStatus() == GameStatus.IN_PROGRESS) {
             System.out.println(gameState.getLastLog());
