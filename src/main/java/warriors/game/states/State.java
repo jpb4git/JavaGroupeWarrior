@@ -6,6 +6,9 @@ import warriors.contracts.Hero;
 import warriors.contracts.Map;
 import warriors.maps.RootMap;
 
+/**
+ * Contains all informations about a game at a given turn
+ */
 public class State implements GameState {
     private String playerName;
     private Hero hero;
@@ -25,6 +28,8 @@ public class State implements GameState {
         this.currentCase = -1;
     }
 
+
+    /*****************************   GETTERs/SETTERs   *************************/
     public String getPlayerName() {
         return playerName;
     }
@@ -34,6 +39,8 @@ public class State implements GameState {
         return gameId;
     }
 
+    /**----------**/
+
     @Override
     public GameStatus getGameStatus() {
         return this.gameStatus;
@@ -42,6 +49,8 @@ public class State implements GameState {
     public void setGameStatus(GameStatus gameStatus) {
         this.gameStatus = gameStatus;
     }
+
+    /**----------**/
 
     @Override
     public Hero getHero() {
@@ -53,6 +62,8 @@ public class State implements GameState {
         return map;
     }
 
+    /**----------**/
+
     @Override
     public String getLastLog() {
         return this.lastLog;
@@ -60,6 +71,8 @@ public class State implements GameState {
     public void setLastLog(String lastLog){
         this.lastLog = lastLog;
     }
+
+    /**----------**/
 
     @Override
     public int getCurrentCase() {

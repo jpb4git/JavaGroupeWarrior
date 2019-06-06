@@ -17,9 +17,12 @@ public class ClientConsole {
 	
 	private static String MENU_COMMENCER_PARTIE = "1";
 	private static String MENU_QUITTER = "2";
+	//private static String MENU_DEBUG = "3";
+	private boolean isDebug = false;
 
 	public static void main(String[] args) {
-				
+		System.out.println(args[0]);
+		System.out.println("hello");
 		WarriorsAPI warriors = new Warriors();
 		Scanner sc = new Scanner(System.in);
 		String menuChoice = "";
@@ -27,7 +30,10 @@ public class ClientConsole {
 			menuChoice = displayMenu(sc);
 			if(menuChoice.equals(MENU_COMMENCER_PARTIE)) {					
 				startGame(warriors, sc);
-			}			
+			/*}else if(menuChoice.equals(MENU_DEBUG)){
+				isDebug = true;
+				startGame(warriors,sc);*/
+			}
 		}while(!menuChoice.equals(MENU_QUITTER));
 		sc.close();
 		System.out.println("A bientot");
@@ -72,7 +78,8 @@ public class ClientConsole {
 		System.out.println();
 		System.out.println("================== Java Warriors ==================");
 		System.out.println("1 - Commencer une partie");
-		System.out.println("2 - Quitter"); 
+		System.out.println("2 - Quitter");
+		System.out.println("3 - Mode Debug");
 		if(sc.hasNext()) {
 			String choice = sc.nextLine();
 			return choice;
