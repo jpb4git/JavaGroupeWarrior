@@ -5,7 +5,6 @@ import warriors.game.states.State;
 import warriors.heroes.AbstractHero;
 import warriors.heroes.Swordman;
 import warriors.heroes.Wizard;
-import warriors.jsonManager.JsonManager;
 import warriors.maps.RootMap;
 
 import java.util.ArrayList;
@@ -18,20 +17,23 @@ import java.util.Random;
  */
 public class Warriors implements WarriorsAPI {
     private ArrayList<Hero> heroes = new ArrayList<>();
-    private JsonManager jsonManager;
     private List<RootMap> maps = new ArrayList<>();
     private State state;
     private ArrayList<Integer> scenario;
     private int nbTurn;
 
 
-    public Warriors(ArrayList<Integer> scenario) {
+    public Warriors(ArrayList<Integer> scenario,RootMap jsonMap) {
         this.heroes.add(new Wizard("Wizard1", "url", 3, 8));
         this.heroes.add(new Swordman("Swordman1", "url", 5, 5));
         this.maps.add(new RootMap("Map1", 64, scenario));
+        if (jsonMap != null){
+            this.maps.add(jsonMap);
+        }
         this.scenario = scenario;
         this.nbTurn = 0;
     }
+
 
 
     /**
@@ -130,5 +132,7 @@ public class Warriors implements WarriorsAPI {
         return this.maps;
     }
 
-
+    public void setMaps(List<RootMap> maps) {
+        this.maps = maps;
+    }
 }

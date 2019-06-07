@@ -8,7 +8,7 @@ import warriors.heroes.AbstractHero;
  */
 public class Blank extends Content {
     public Blank(String name) {
-        super(name);
+        super(name, "Blank");
     }
 
     /**

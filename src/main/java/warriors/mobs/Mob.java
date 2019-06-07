@@ -13,7 +13,7 @@ public class Mob extends Content {
     private int attackPts;
 
     public Mob(String name, int healthPts, int attackPts) {
-        super(name);
+        super(name, "Mob");
         this.healthPts = healthPts;
         this.attackPts = attackPts;
     }

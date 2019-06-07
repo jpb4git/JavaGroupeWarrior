@@ -9,7 +9,7 @@ public class Potion extends Content {
     private int healPts;
 
     public Potion(String name, int healPts){
-        super(name);
+        super(name, "Potion");
         this.healPts = healPts;
     }
 

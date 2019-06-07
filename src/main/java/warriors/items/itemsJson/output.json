@@ -1,0 +1,528 @@
+{
+  "name": "JsonMap",
+  "numberOfCase": 64,
+  "initialBoard": [
+    {
+      "content": {
+        "name": "Case vide",
+        "type": "Blank",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "attackBonus": 1,
+        "name": "Arc",
+        "type": "Weapon",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "name": "Case vide",
+        "type": "Blank",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 9,
+        "attackPts": 2,
+        "name": "Warlock",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "name": "Case vide",
+        "type": "Blank",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 15,
+        "attackPts": 4,
+        "name": "Dragon",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 9,
+        "attackPts": 2,
+        "name": "Warlock",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 6,
+        "attackPts": 1,
+        "name": "Gobelin",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "name": "Case vide",
+        "type": "Blank",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "name": "Case vide",
+        "type": "Blank",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "attackBonus": 1,
+        "name": "Arc",
+        "type": "Weapon",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "name": "Case vide",
+        "type": "Blank",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 15,
+        "attackPts": 4,
+        "name": "Dragon",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healPts": 1,
+        "name": "Potion mineure",
+        "type": "Potion",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healPts": 2,
+        "name": "Potion standard",
+        "type": "Potion",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healPts": 2,
+        "name": "Potion standard",
+        "type": "Potion",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "attackBonus": 1,
+        "name": "Arc",
+        "type": "Weapon",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 9,
+        "attackPts": 2,
+        "name": "Warlock",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healPts": 1,
+        "name": "Potion mineure",
+        "type": "Potion",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 6,
+        "attackPts": 1,
+        "name": "Gobelin",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 6,
+        "attackPts": 1,
+        "name": "Gobelin",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 6,
+        "attackPts": 1,
+        "name": "Gobelin",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "attackBonus": 7,
+        "name": "Sort \"boule de feu\"",
+        "type": "Spell",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "name": "Case vide",
+        "type": "Blank",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 15,
+        "attackPts": 4,
+        "name": "Dragon",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "attackBonus": 3,
+        "name": "Massue",
+        "type": "Weapon",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "attackBonus": 1,
+        "name": "Arc",
+        "type": "Weapon",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 9,
+        "attackPts": 2,
+        "name": "Warlock",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "attackBonus": 2,
+        "name": "Sort \"eclair\"",
+        "type": "Spell",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 9,
+        "attackPts": 2,
+        "name": "Warlock",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "attackBonus": 3,
+        "name": "Massue",
+        "type": "Weapon",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 6,
+        "attackPts": 1,
+        "name": "Gobelin",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "attackBonus": 7,
+        "name": "Sort \"boule de feu\"",
+        "type": "Spell",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "attackBonus": 2,
+        "name": "Sort \"eclair\"",
+        "type": "Spell",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "name": "Case vide",
+        "type": "Blank",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 9,
+        "attackPts": 2,
+        "name": "Warlock",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "attackBonus": 2,
+        "name": "Sort \"eclair\"",
+        "type": "Spell",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "name": "Case vide",
+        "type": "Blank",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "name": "Case vide",
+        "type": "Blank",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 6,
+        "attackPts": 1,
+        "name": "Gobelin",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healPts": 5,
+        "name": "Potion maxi",
+        "type": "Potion",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 6,
+        "attackPts": 1,
+        "name": "Gobelin",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "attackBonus": 2,
+        "name": "Sort \"eclair\"",
+        "type": "Spell",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 6,
+        "attackPts": 1,
+        "name": "Gobelin",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 6,
+        "attackPts": 1,
+        "name": "Gobelin",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "name": "Case vide",
+        "type": "Blank",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "attackBonus": 3,
+        "name": "Massue",
+        "type": "Weapon",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 15,
+        "attackPts": 4,
+        "name": "Dragon",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healPts": 1,
+        "name": "Potion mineure",
+        "type": "Potion",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "attackBonus": 5,
+        "name": "Epee",
+        "type": "Weapon",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 9,
+        "attackPts": 2,
+        "name": "Warlock",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "name": "Case vide",
+        "type": "Blank",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "name": "Case vide",
+        "type": "Blank",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 9,
+        "attackPts": 2,
+        "name": "Warlock",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healPts": 1,
+        "name": "Potion mineure",
+        "type": "Potion",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healPts": 1,
+        "name": "Potion mineure",
+        "type": "Potion",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 6,
+        "attackPts": 1,
+        "name": "Gobelin",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "attackBonus": 1,
+        "name": "Arc",
+        "type": "Weapon",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "name": "Case vide",
+        "type": "Blank",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "attackBonus": 2,
+        "name": "Sort \"eclair\"",
+        "type": "Spell",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healPts": 2,
+        "name": "Potion standard",
+        "type": "Potion",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 9,
+        "attackPts": 2,
+        "name": "Warlock",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "healthPts": 9,
+        "attackPts": 2,
+        "name": "Warlock",
+        "type": "Mob",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "attackBonus": 5,
+        "name": "Epee",
+        "type": "Weapon",
+        "tileToClear": false
+      }
+    }
+  ]
+}

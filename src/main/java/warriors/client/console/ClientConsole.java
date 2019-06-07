@@ -4,29 +4,44 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.google.gson.Gson;
+import com.google.gson.*;
+
+import warriors.Content;
+import warriors.MyContentDeserializer;
+import warriors.MyContentSerializer;
 import warriors.contracts.GameState;
 import warriors.contracts.GameStatus;
 import warriors.contracts.Hero;
 import warriors.contracts.Map;
 import warriors.contracts.WarriorsAPI;
 import warriors.engine.Warriors;
+import warriors.maps.RootMap;
+
+
 
 public class ClientConsole {
 
     private static String MENU_COMMENCER_PARTIE = "1";
     private static String MENU_QUITTER = "2";
-
+    private static Map jsonMap = null;
 
     public static void main(String[] args) {
 
 
 
         ArrayList<Integer> scenario = null;
+
         if(args.length > 0){
-            scenario =  csvToArraylist(args[0]);
+            if(args[0].equals("Debug")) {
+                scenario = csvToArraylist(args[1]);
+            }else if(args[0].equals("Json")){
+                System.out.println("ok" + args[1]);
+                jsonMap = deserialyzed(args[1]);
+                System.out.println(jsonMap);
+            }
         }
-        WarriorsAPI warriors = new Warriors(scenario);
+        WarriorsAPI warriors = new Warriors(scenario,(RootMap) jsonMap);
+
         Scanner sc = new Scanner(System.in);
         String menuChoice = "";
         do {
@@ -40,6 +55,7 @@ public class ClientConsole {
     }
 
     private static void startGame(WarriorsAPI warriors, Scanner sc) {
+
 
         System.out.println();
         System.out.println("Entrez votre nom:");
@@ -65,9 +81,8 @@ public class ClientConsole {
         String gameId = gameState.getGameId();
 
 
-        Gson gson = new Gson();
-        String Result =  gson.toJson(gameState.getMap());
-        System.out.println(Result);
+        serialyze((RootMap) gameState.getMap());
+
 
         while (gameState.getGameStatus() == GameStatus.IN_PROGRESS) {
             System.out.println(gameState.getLastLog());
@@ -79,6 +94,54 @@ public class ClientConsole {
 
         System.out.println(gameState.getLastLog());
     }
+
+
+    private static void serialyze(RootMap map){
+
+
+        Gson gson = new Gson();
+        String Result =  gson.toJson(map);
+       // System.out.println(Result);
+
+        GsonBuilder gson2 = new GsonBuilder();
+
+
+        gson2.registerTypeAdapter(Content.class, new MyContentSerializer());
+        Gson gson3 =  gson2.create();
+
+
+    }
+
+    private static Map deserialyzed(String path){
+        String jsonData = "";
+        RootMap jsonMapGenerated = null;
+        GsonBuilder gson2 = new GsonBuilder();
+
+        gson2.registerTypeAdapter(Content.class, new MyContentDeserializer());
+        Gson gson3 =  gson2.create();
+
+
+        try {
+            BufferedReader fichier_source = new BufferedReader(new FileReader(path));
+
+            String line;
+            while ((line = fichier_source.readLine()) != null) {
+                jsonData+=line;
+            }
+
+            // test custom
+            jsonMapGenerated = gson3.fromJson(jsonData, RootMap.class);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+        return jsonMapGenerated;
+    }
+
 
     private static ArrayList<Integer> csvToArraylist(String path) {
 
@@ -111,4 +174,5 @@ public class ClientConsole {
         return "";
     }
 }
+
 
