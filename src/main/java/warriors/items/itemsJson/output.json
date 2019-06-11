@@ -1,527 +1,527 @@
 {
-  "name": "JsonMap",
+  "name": "Map1",
   "numberOfCase": 64,
   "initialBoard": [
     {
       "content": {
-        "name": "Case vide",
         "type": "Blank",
+        "name": "Case vide",
         "tileToClear": false
       }
     },
     {
       "content": {
-        "attackBonus": 1,
-        "name": "Arc",
         "type": "Weapon",
-        "tileToClear": false
+        "name": "Arc",
+        "tileToClear": false,
+        "attackBonus": 1
       }
     },
     {
       "content": {
-        "name": "Case vide",
         "type": "Blank",
+        "name": "Case vide",
         "tileToClear": false
       }
     },
     {
       "content": {
-        "healthPts": 9,
-        "attackPts": 2,
-        "name": "Warlock",
         "type": "Mob",
-        "tileToClear": false
+        "name": "Warlock",
+        "tileToClear": false,
+        "healthPts": 9,
+        "attackPts": 2
       }
     },
     {
       "content": {
-        "name": "Case vide",
         "type": "Blank",
+        "name": "Case vide",
         "tileToClear": false
       }
     },
     {
       "content": {
-        "healthPts": 15,
-        "attackPts": 4,
+        "type": "Mob",
         "name": "Dragon",
-        "type": "Mob",
-        "tileToClear": false
+        "tileToClear": false,
+        "healthPts": 15,
+        "attackPts": 4
       }
     },
     {
       "content": {
-        "healthPts": 9,
-        "attackPts": 2,
+        "type": "Mob",
         "name": "Warlock",
-        "type": "Mob",
-        "tileToClear": false
+        "tileToClear": false,
+        "healthPts": 9,
+        "attackPts": 2
       }
     },
     {
       "content": {
-        "healthPts": 6,
-        "attackPts": 1,
+        "type": "Mob",
         "name": "Gobelin",
-        "type": "Mob",
-        "tileToClear": false
+        "tileToClear": false,
+        "healthPts": 6,
+        "attackPts": 1
       }
     },
     {
       "content": {
-        "name": "Case vide",
         "type": "Blank",
-        "tileToClear": false
-      }
-    },
-    {
-      "content": {
         "name": "Case vide",
-        "type": "Blank",
         "tileToClear": false
       }
     },
     {
       "content": {
-        "attackBonus": 1,
-        "name": "Arc",
+        "type": "Blank",
+        "name": "Case vide",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
         "type": "Weapon",
-        "tileToClear": false
+        "name": "Arc",
+        "tileToClear": false,
+        "attackBonus": 1
       }
     },
     {
       "content": {
-        "name": "Case vide",
         "type": "Blank",
+        "name": "Case vide",
         "tileToClear": false
       }
     },
     {
       "content": {
-        "healthPts": 15,
-        "attackPts": 4,
-        "name": "Dragon",
         "type": "Mob",
-        "tileToClear": false
+        "name": "Dragon",
+        "tileToClear": false,
+        "healthPts": 15,
+        "attackPts": 4
       }
     },
     {
       "content": {
-        "healPts": 1,
+        "type": "Potion",
         "name": "Potion mineure",
-        "type": "Potion",
-        "tileToClear": false
+        "tileToClear": false,
+        "healPts": 1
       }
     },
     {
       "content": {
-        "healPts": 2,
+        "type": "Potion",
         "name": "Potion standard",
-        "type": "Potion",
-        "tileToClear": false
+        "tileToClear": false,
+        "healPts": 2
       }
     },
     {
       "content": {
-        "healPts": 2,
+        "type": "Potion",
         "name": "Potion standard",
-        "type": "Potion",
-        "tileToClear": false
+        "tileToClear": false,
+        "healPts": 2
       }
     },
     {
       "content": {
-        "attackBonus": 1,
-        "name": "Arc",
         "type": "Weapon",
-        "tileToClear": false
+        "name": "Arc",
+        "tileToClear": false,
+        "attackBonus": 1
       }
     },
     {
       "content": {
-        "healthPts": 9,
-        "attackPts": 2,
-        "name": "Warlock",
         "type": "Mob",
-        "tileToClear": false
+        "name": "Warlock",
+        "tileToClear": false,
+        "healthPts": 9,
+        "attackPts": 2
       }
     },
     {
       "content": {
-        "healPts": 1,
+        "type": "Potion",
         "name": "Potion mineure",
-        "type": "Potion",
-        "tileToClear": false
+        "tileToClear": false,
+        "healPts": 1
       }
     },
     {
       "content": {
-        "healthPts": 6,
-        "attackPts": 1,
-        "name": "Gobelin",
         "type": "Mob",
-        "tileToClear": false
-      }
-    },
-    {
-      "content": {
-        "healthPts": 6,
-        "attackPts": 1,
         "name": "Gobelin",
-        "type": "Mob",
-        "tileToClear": false
-      }
-    },
-    {
-      "content": {
+        "tileToClear": false,
         "healthPts": 6,
-        "attackPts": 1,
-        "name": "Gobelin",
-        "type": "Mob",
-        "tileToClear": false
+        "attackPts": 1
       }
     },
     {
       "content": {
-        "attackBonus": 7,
-        "name": "Sort \"boule de feu\"",
+        "type": "Mob",
+        "name": "Gobelin",
+        "tileToClear": false,
+        "healthPts": 6,
+        "attackPts": 1
+      }
+    },
+    {
+      "content": {
+        "type": "Mob",
+        "name": "Gobelin",
+        "tileToClear": false,
+        "healthPts": 6,
+        "attackPts": 1
+      }
+    },
+    {
+      "content": {
         "type": "Spell",
-        "tileToClear": false
+        "name": "Sort \"boule de feu\"",
+        "tileToClear": false,
+        "attackBonus": 7
       }
     },
     {
       "content": {
-        "name": "Case vide",
         "type": "Blank",
+        "name": "Case vide",
         "tileToClear": false
       }
     },
     {
       "content": {
-        "healthPts": 15,
-        "attackPts": 4,
+        "type": "Mob",
         "name": "Dragon",
-        "type": "Mob",
-        "tileToClear": false
+        "tileToClear": false,
+        "healthPts": 15,
+        "attackPts": 4
       }
     },
     {
       "content": {
-        "attackBonus": 3,
-        "name": "Massue",
         "type": "Weapon",
-        "tileToClear": false
+        "name": "Massue",
+        "tileToClear": false,
+        "attackBonus": 3
       }
     },
     {
       "content": {
-        "attackBonus": 1,
+        "type": "Weapon",
         "name": "Arc",
-        "type": "Weapon",
-        "tileToClear": false
+        "tileToClear": false,
+        "attackBonus": 1
       }
     },
     {
       "content": {
-        "healthPts": 9,
-        "attackPts": 2,
-        "name": "Warlock",
         "type": "Mob",
-        "tileToClear": false
+        "name": "Warlock",
+        "tileToClear": false,
+        "healthPts": 9,
+        "attackPts": 2
       }
     },
     {
       "content": {
-        "attackBonus": 2,
-        "name": "Sort \"eclair\"",
         "type": "Spell",
-        "tileToClear": false
+        "name": "Sort \"eclair\"",
+        "tileToClear": false,
+        "attackBonus": 2
       }
     },
     {
       "content": {
-        "healthPts": 9,
-        "attackPts": 2,
-        "name": "Warlock",
         "type": "Mob",
-        "tileToClear": false
+        "name": "Warlock",
+        "tileToClear": false,
+        "healthPts": 9,
+        "attackPts": 2
       }
     },
     {
       "content": {
-        "attackBonus": 3,
+        "type": "Weapon",
         "name": "Massue",
-        "type": "Weapon",
-        "tileToClear": false
+        "tileToClear": false,
+        "attackBonus": 3
       }
     },
     {
       "content": {
-        "healthPts": 6,
-        "attackPts": 1,
-        "name": "Gobelin",
         "type": "Mob",
-        "tileToClear": false
+        "name": "Gobelin",
+        "tileToClear": false,
+        "healthPts": 6,
+        "attackPts": 1
       }
     },
     {
       "content": {
-        "attackBonus": 7,
+        "type": "Spell",
         "name": "Sort \"boule de feu\"",
-        "type": "Spell",
-        "tileToClear": false
+        "tileToClear": false,
+        "attackBonus": 7
       }
     },
     {
       "content": {
-        "attackBonus": 2,
+        "type": "Spell",
         "name": "Sort \"eclair\"",
-        "type": "Spell",
-        "tileToClear": false
+        "tileToClear": false,
+        "attackBonus": 2
       }
     },
     {
       "content": {
-        "name": "Case vide",
         "type": "Blank",
+        "name": "Case vide",
         "tileToClear": false
       }
     },
     {
       "content": {
-        "healthPts": 9,
-        "attackPts": 2,
+        "type": "Mob",
         "name": "Warlock",
-        "type": "Mob",
-        "tileToClear": false
+        "tileToClear": false,
+        "healthPts": 9,
+        "attackPts": 2
       }
     },
     {
       "content": {
-        "attackBonus": 2,
-        "name": "Sort \"eclair\"",
         "type": "Spell",
-        "tileToClear": false
+        "name": "Sort \"eclair\"",
+        "tileToClear": false,
+        "attackBonus": 2
       }
     },
     {
       "content": {
-        "name": "Case vide",
         "type": "Blank",
-        "tileToClear": false
-      }
-    },
-    {
-      "content": {
         "name": "Case vide",
-        "type": "Blank",
         "tileToClear": false
       }
     },
     {
       "content": {
-        "healthPts": 6,
-        "attackPts": 1,
-        "name": "Gobelin",
+        "type": "Blank",
+        "name": "Case vide",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
         "type": "Mob",
-        "tileToClear": false
+        "name": "Gobelin",
+        "tileToClear": false,
+        "healthPts": 6,
+        "attackPts": 1
       }
     },
     {
       "content": {
-        "healPts": 5,
+        "type": "Potion",
         "name": "Potion maxi",
-        "type": "Potion",
-        "tileToClear": false
+        "tileToClear": false,
+        "healPts": 5
       }
     },
     {
       "content": {
-        "healthPts": 6,
-        "attackPts": 1,
-        "name": "Gobelin",
         "type": "Mob",
-        "tileToClear": false
+        "name": "Gobelin",
+        "tileToClear": false,
+        "healthPts": 6,
+        "attackPts": 1
       }
     },
     {
       "content": {
-        "attackBonus": 2,
-        "name": "Sort \"eclair\"",
         "type": "Spell",
-        "tileToClear": false
+        "name": "Sort \"eclair\"",
+        "tileToClear": false,
+        "attackBonus": 2
       }
     },
     {
       "content": {
-        "healthPts": 6,
-        "attackPts": 1,
-        "name": "Gobelin",
         "type": "Mob",
-        "tileToClear": false
-      }
-    },
-    {
-      "content": {
-        "healthPts": 6,
-        "attackPts": 1,
         "name": "Gobelin",
-        "type": "Mob",
-        "tileToClear": false
+        "tileToClear": false,
+        "healthPts": 6,
+        "attackPts": 1
       }
     },
     {
       "content": {
-        "name": "Case vide",
+        "type": "Mob",
+        "name": "Gobelin",
+        "tileToClear": false,
+        "healthPts": 6,
+        "attackPts": 1
+      }
+    },
+    {
+      "content": {
         "type": "Blank",
+        "name": "Case vide",
         "tileToClear": false
       }
     },
     {
       "content": {
-        "attackBonus": 3,
+        "type": "Weapon",
         "name": "Massue",
-        "type": "Weapon",
-        "tileToClear": false
+        "tileToClear": false,
+        "attackBonus": 3
       }
     },
     {
       "content": {
-        "healthPts": 15,
-        "attackPts": 4,
+        "type": "Mob",
         "name": "Dragon",
-        "type": "Mob",
-        "tileToClear": false
+        "tileToClear": false,
+        "healthPts": 15,
+        "attackPts": 4
       }
     },
     {
       "content": {
-        "healPts": 1,
-        "name": "Potion mineure",
         "type": "Potion",
-        "tileToClear": false
+        "name": "Potion mineure",
+        "tileToClear": false,
+        "healPts": 1
       }
     },
     {
       "content": {
-        "attackBonus": 5,
-        "name": "Epee",
         "type": "Weapon",
-        "tileToClear": false
+        "name": "Epee",
+        "tileToClear": false,
+        "attackBonus": 5
       }
     },
     {
       "content": {
-        "healthPts": 9,
-        "attackPts": 2,
-        "name": "Warlock",
         "type": "Mob",
-        "tileToClear": false
-      }
-    },
-    {
-      "content": {
-        "name": "Case vide",
-        "type": "Blank",
-        "tileToClear": false
-      }
-    },
-    {
-      "content": {
-        "name": "Case vide",
-        "type": "Blank",
-        "tileToClear": false
-      }
-    },
-    {
-      "content": {
-        "healthPts": 9,
-        "attackPts": 2,
         "name": "Warlock",
+        "tileToClear": false,
+        "healthPts": 9,
+        "attackPts": 2
+      }
+    },
+    {
+      "content": {
+        "type": "Blank",
+        "name": "Case vide",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
+        "type": "Blank",
+        "name": "Case vide",
+        "tileToClear": false
+      }
+    },
+    {
+      "content": {
         "type": "Mob",
-        "tileToClear": false
+        "name": "Warlock",
+        "tileToClear": false,
+        "healthPts": 9,
+        "attackPts": 2
       }
     },
     {
       "content": {
-        "healPts": 1,
-        "name": "Potion mineure",
         "type": "Potion",
-        "tileToClear": false
-      }
-    },
-    {
-      "content": {
-        "healPts": 1,
         "name": "Potion mineure",
-        "type": "Potion",
-        "tileToClear": false
+        "tileToClear": false,
+        "healPts": 1
       }
     },
     {
       "content": {
-        "healthPts": 6,
-        "attackPts": 1,
+        "type": "Potion",
+        "name": "Potion mineure",
+        "tileToClear": false,
+        "healPts": 1
+      }
+    },
+    {
+      "content": {
+        "type": "Mob",
         "name": "Gobelin",
-        "type": "Mob",
-        "tileToClear": false
+        "tileToClear": false,
+        "healthPts": 6,
+        "attackPts": 1
       }
     },
     {
       "content": {
-        "attackBonus": 1,
+        "type": "Weapon",
         "name": "Arc",
-        "type": "Weapon",
-        "tileToClear": false
+        "tileToClear": false,
+        "attackBonus": 1
       }
     },
     {
       "content": {
-        "name": "Case vide",
         "type": "Blank",
+        "name": "Case vide",
         "tileToClear": false
       }
     },
     {
       "content": {
-        "attackBonus": 2,
-        "name": "Sort \"eclair\"",
         "type": "Spell",
-        "tileToClear": false
+        "name": "Sort \"eclair\"",
+        "tileToClear": false,
+        "attackBonus": 2
       }
     },
     {
       "content": {
-        "healPts": 2,
-        "name": "Potion standard",
         "type": "Potion",
-        "tileToClear": false
+        "name": "Potion standard",
+        "tileToClear": false,
+        "healPts": 2
       }
     },
     {
       "content": {
-        "healthPts": 9,
-        "attackPts": 2,
-        "name": "Warlock",
         "type": "Mob",
-        "tileToClear": false
-      }
-    },
-    {
-      "content": {
-        "healthPts": 9,
-        "attackPts": 2,
         "name": "Warlock",
-        "type": "Mob",
-        "tileToClear": false
+        "tileToClear": false,
+        "healthPts": 9,
+        "attackPts": 2
       }
     },
     {
       "content": {
-        "attackBonus": 5,
-        "name": "Epee",
+        "type": "Mob",
+        "name": "Warlock",
+        "tileToClear": false,
+        "healthPts": 9,
+        "attackPts": 2
+      }
+    },
+    {
+      "content": {
         "type": "Weapon",
-        "tileToClear": false
+        "name": "Epee",
+        "tileToClear": false,
+        "attackBonus": 5
       }
     }
   ]

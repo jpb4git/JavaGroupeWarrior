@@ -11,7 +11,7 @@ public class Spell extends Offensive {
     private int attackBonus;
 
     public Spell(String name, int attackBonus) {
-        super(name, "Spell");
+        super(name);
         this.attackBonus = attackBonus;
     }
 

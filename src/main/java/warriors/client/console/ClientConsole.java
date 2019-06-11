@@ -99,15 +99,20 @@ public class ClientConsole {
     private static void serialyze(RootMap map){
 
 
-        Gson gson = new Gson();
-        String Result =  gson.toJson(map);
-       // System.out.println(Result);
+        //Gson gson = new Gson();
+        //String Result =  gson.toJson(map);
+       //System.out.println(Result);
 
+        String jsonMapObject = "";
         GsonBuilder gson2 = new GsonBuilder();
 
 
         gson2.registerTypeAdapter(Content.class, new MyContentSerializer());
         Gson gson3 =  gson2.create();
+
+        jsonMapObject = gson3.toJson(map);
+        System.out.println(jsonMapObject);
+                //.fromJson(jsonData, RootMap.class);
 
 
     }

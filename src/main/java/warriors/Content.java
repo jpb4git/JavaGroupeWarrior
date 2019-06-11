@@ -8,13 +8,12 @@ import warriors.heroes.AbstractHero;
  */
 public abstract class Content {
     private String name;
-    private String type;
+
 
     protected boolean tileToClear;
 
-    public Content(String name, String type) {
+    public Content(String name) {
         this.name = name;
-        this.type = type;
         this.tileToClear = false;
     }
 

@@ -11,7 +11,7 @@ public class Weapon extends Offensive {
     private int attackBonus;
 
     public Weapon(String name, int attackBonus) {
-        super(name, "Weapon");
+        super(name);
         this.attackBonus = attackBonus;
     }
 
