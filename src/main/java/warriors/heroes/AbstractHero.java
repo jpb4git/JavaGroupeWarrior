@@ -13,9 +13,11 @@ public abstract class AbstractHero implements Hero {
     private int life;
     private int attackLevel;
     private Offensive equipment;
+    private int id;
 
 
-    public AbstractHero(String name, String image, int life, int attackLevel) {
+    public AbstractHero(int id,String name, String image, int life, int attackLevel) {
+        this.id = id;
         this.name = name;
         this.image = image;
         this.life = life;
@@ -72,5 +74,9 @@ public abstract class AbstractHero implements Hero {
 
     public void setAttackLevel(int attackLevel) {
         this.attackLevel = attackLevel;
+    }
+
+    public int getId() {
+        return id;
     }
 }

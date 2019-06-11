@@ -21,16 +21,16 @@ public class HeroDAO {
 
     /**
      *
-     * @param id
+     * @param  hero AbstractHero
      * @return
      */
-    public ResultSet getHero(int id){
+    public ResultSet getHero(AbstractHero hero){
         Statement stmt;
         ResultSet rs;
         //Read ConnexionManager
         try {
             stmt = this.connection.createStatement();
-            rs = stmt.executeQuery("SELECT * FROM Hero WHERE ID=" + id);
+            rs = stmt.executeQuery("SELECT * FROM Hero WHERE ID=" + hero.getId());
             return rs;
 
 
@@ -78,14 +78,14 @@ public class HeroDAO {
 
     /**
      *
-     * @param id
+     * @param  hero AbstractHero
      */
-    public void deleteHero(int id){
+    public void deleteHero(AbstractHero hero){
         Statement stmt;
 
         try {
             stmt = this.connection.createStatement();
-            stmt.executeUpdate("DELETE FROM Hero WHERE ID ="+ id);
+            stmt.executeUpdate("DELETE FROM Hero WHERE ID =" + hero.getId());
 
         } catch (SQLException ex) {
             // handle any errors
@@ -96,29 +96,32 @@ public class HeroDAO {
 
     }
 
+
     /**
      *
-     * @param id
-     * @param params
+     * @param  hero AbstractHero
+     *
      */
     //TODO hero.getId() implementation !!!
 
-    public void updateHero(int id , AbstractHero hero){
+    public void updateHero(AbstractHero hero){
         Statement stmt;
         String builder="UPDATE Hero  SET";
 
-        builder += "Name = " +  hero.getName() + ",";
-        builder += "Life = " +  hero.getLife() + ",";
+        builder += " Name ='" +  hero.getName() + "hello',";
+        builder += " Life =" +  hero.getLife() + ",";
 
-        builder += "Strengh = " +  hero.getAttackLevel()  ;
-        builder += "WHERE ID =" + id; // hero.getId() implementation !!!
+        builder += " Strengh =" +  hero.getAttackLevel() +"," ;
+        builder += " Offense ='{\"name\":\"" +  hero.getEquipment().getName() +"\",\"Strengh\":"+hero.getEquipment().getAttackBonus()  + "}'" ;
 
+        builder += " WHERE ID=" + hero.getId(); // hero.getId() implementation !!!
+        System.out.println(builder);
 
 
         //Update to ConnexionManager
         try {
-            stmt = conn.createStatement();
-            int update = stmt.executeUpdate(" UPDATE Hero  SET Name = "+hero. +", Life = 18, Strengh = 2 WHERE ID ="+id);
+            stmt = connection.createStatement();
+            stmt.executeUpdate(builder);
 
         } catch (SQLException ex) {
             // handle any errors

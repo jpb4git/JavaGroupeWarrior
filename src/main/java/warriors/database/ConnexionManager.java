@@ -15,8 +15,7 @@ public class ConnexionManager {
                     DriverManager.getConnection("jdbc:mysql://217.182.141.113/CampusNumerique2020?" +
                             "user=CampusNumerique2020&password=CampusNumerique2020");
 
-        } catch (
-            SQLException ex) {
+        } catch (SQLException ex) {
             // handle any errors
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());

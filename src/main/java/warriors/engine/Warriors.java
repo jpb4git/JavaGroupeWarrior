@@ -1,12 +1,19 @@
 package warriors.engine;
 
 import warriors.contracts.*;
+import warriors.database.ConnexionManager;
+import warriors.database.HeroDAO;
 import warriors.game.states.State;
 import warriors.heroes.AbstractHero;
 import warriors.heroes.Swordman;
 import warriors.heroes.Wizard;
+import warriors.items.Spell;
+import warriors.items.Weapon;
 import warriors.maps.RootMap;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -21,11 +28,16 @@ public class Warriors implements WarriorsAPI {
     private State state;
     private ArrayList<Integer> scenario;
     private int nbTurn;
+    private HeroDAO heroDao;
 
 
-    public Warriors(ArrayList<Integer> scenario,RootMap jsonMap) {
-        this.heroes.add(new Wizard("Wizard1", "url", 3, 8));
-        this.heroes.add(new Swordman("Swordman1", "url", 5, 5));
+    public Warriors(HeroDAO heroDao, ArrayList<Integer> scenario, RootMap jsonMap) {
+        this.heroDao = heroDao;
+
+        heroDbToHeroList();
+
+        //this.heroes.add(new Wizard("Wizard1", "url", 3, 8));
+        //this.heroes.add(new Swordman("Swordman1", "url", 5, 5));
         this.maps.add(new RootMap("Map1", 64, scenario));
         if (jsonMap != null){
             this.maps.add(jsonMap);
@@ -40,10 +52,37 @@ public class Warriors implements WarriorsAPI {
      * Reset heroes an maps when restarting a game
      */
     private void initHeroes() {
-        this.heroes.set(0, new Wizard("Wizard1", "url", 3, 8));
-        this.heroes.set(1, new Swordman("Swordman1", "url", 5, 5));
+        this.heroes = null;
+        heroDbToHeroList();
+        //this.heroes.set(0, new Wizard("Wizard1", "url", 3, 8));
+        //this.heroes.set(1, new Swordman("Swordman1", "url", 5, 5));
         this.maps.set(0, new RootMap("Map1", 64, scenario));
         this.nbTurn = 0;
+    }
+
+    private void heroDbToHeroList(){
+        ResultSet listHeroes = heroDao.getHeroes();
+        try {
+            while (listHeroes.next()) {
+                if(listHeroes.getString("Type").equals("WARRIOR")){
+                    AbstractHero hero = new Swordman(listHeroes.getInt("ID"),  listHeroes.getString("Name"), "url", listHeroes.getInt("Life"), listHeroes.getInt("Strengh"));
+                    hero.setEquipment(new Weapon(listHeroes.getString("Offense"), 8 ));
+                    this.heroes.add(hero);
+                }else{
+                    AbstractHero hero = new Wizard(listHeroes.getInt("ID"), listHeroes.getString("Name"), "url", listHeroes.getInt("Life"), listHeroes.getInt("Strengh"));
+                    hero.setEquipment(new Spell(listHeroes.getString("Offense"), 8 ));
+                    this.heroes.add(hero);
+                }
+
+            }
+        }catch(SQLException ex) {
+            // handle any errors
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+
+
+        }
     }
 
 
@@ -97,7 +136,7 @@ public class Warriors implements WarriorsAPI {
             Hero hero = state.getHero();
             String eventAction = this.state.getMap()
                     .getInitialBoard()
-                    .get(newCase).prepareEvent((AbstractHero) hero);
+                    .get(newCase).prepareEvent(this.heroDao,(AbstractHero) hero);
 
             message += eventName + "\n";
             message += eventAction + "\n";

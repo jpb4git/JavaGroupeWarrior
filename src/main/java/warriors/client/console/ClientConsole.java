@@ -16,6 +16,8 @@ import warriors.contracts.GameStatus;
 import warriors.contracts.Hero;
 import warriors.contracts.Map;
 import warriors.contracts.WarriorsAPI;
+import warriors.database.ConnexionManager;
+import warriors.database.HeroDAO;
 import warriors.engine.Warriors;
 import warriors.maps.RootMap;
 
@@ -28,6 +30,8 @@ public class ClientConsole {
 
     public static void main(String[] args) {
 
+        ConnexionManager connexion = new ConnexionManager();
+        HeroDAO heroDao = new HeroDAO(connexion.getConnection());
 
         ArrayList<Integer> scenario = null;
         testDB();
@@ -40,7 +44,7 @@ public class ClientConsole {
                 System.out.println(jsonMap);
             }
         }
-        WarriorsAPI warriors = new Warriors(scenario, (RootMap) jsonMap);
+        WarriorsAPI warriors = new Warriors(heroDao, scenario, (RootMap) jsonMap);
 
         Scanner sc = new Scanner(System.in);
         String menuChoice = "";

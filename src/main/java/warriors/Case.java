@@ -1,5 +1,6 @@
 package warriors;
 
+import warriors.database.HeroDAO;
 import warriors.heroes.AbstractHero;
 import warriors.items.Blank;
 
@@ -18,12 +19,16 @@ public class Case {
      * @param hero (Hero) - Hero that item/mob has to be applied or fight
      * @return message (String) - Message returned by the item or mob
      */
-    public String prepareEvent(AbstractHero hero) {
+    public String prepareEvent(HeroDAO heroDao, AbstractHero hero) {
         String message = content.doEvent(hero);
         if (content.tileToClear == true){
             content = new Blank("Case vide");
             message += " \nLa case a ete videe";
         }
+
+        // c'est là gros !!
+        heroDao.updateHero(hero);
+
         return message;
     }
 
