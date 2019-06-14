@@ -1,5 +1,7 @@
 package warriors.engine;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import warriors.contracts.*;
 import warriors.database.ConnexionManager;
 import warriors.database.HeroDAO;
@@ -66,6 +68,7 @@ public class Warriors implements WarriorsAPI {
             while (listHeroes.next()) {
                 if(listHeroes.getString("Type").equals("WARRIOR")){
                     AbstractHero hero = new Swordman(listHeroes.getInt("ID"),  listHeroes.getString("Name"), "url", listHeroes.getInt("Life"), listHeroes.getInt("Strengh"));
+
                     hero.setEquipment(new Weapon(listHeroes.getString("Offense"), 8 ));
                     this.heroes.add(hero);
                 }else{

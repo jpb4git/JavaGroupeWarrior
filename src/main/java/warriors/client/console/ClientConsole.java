@@ -19,6 +19,7 @@ import warriors.contracts.WarriorsAPI;
 import warriors.database.ConnexionManager;
 import warriors.database.HeroDAO;
 import warriors.engine.Warriors;
+import warriors.front.FrontAPI;
 import warriors.maps.RootMap;
 
 
@@ -87,12 +88,15 @@ public class ClientConsole {
 
         serialyze((RootMap) gameState.getMap());
 
+        FrontAPI fA = new FrontAPI();
 
         while (gameState.getGameStatus() == GameStatus.IN_PROGRESS) {
             System.out.println(gameState.getLastLog());
             System.out.println("\nAppuyer sur une touche pour lancer le de");
 
+
             sc.nextLine();
+            System.out.println("FrontAPI : " + fA.nextTurn("GameWarrior_JSON.json"));
             gameState = warriors.nextTurn(gameId);
         }
 
